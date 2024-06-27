@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-print("Setup terminado")
 colors = ["#20BEFF","#1F77B4","#72C3DC","#D6DBDF","#5D6D7E","#F8F9F9","#2c4359"]
 
 # HISTOGRAMA

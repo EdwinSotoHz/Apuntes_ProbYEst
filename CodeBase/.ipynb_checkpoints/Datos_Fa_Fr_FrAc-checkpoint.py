@@ -38,7 +38,7 @@ def frecAc(frec):
     ultVal = 0
     for element in frec:
         fAc = element
-        frecAc.append(fAc+ultVal)
+        frecAc.append(round(fAc+ultVal,3))
         ultVal += fAc
     return frecAc
 

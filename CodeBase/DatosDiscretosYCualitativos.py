@@ -30,6 +30,11 @@ def formatData(dataArray):
         if isinstance(element, str):
             element = element.strip()
             element = element.lower()
+            element = element.replace('á','a')
+            element = element.replace('é','e')
+            element = element.replace('í','i')
+            element = element.replace('ó','o')
+            element = element.replace('ú','u')
             dataArraySorted.append(element)
         else:
             element = round(element, 3)
@@ -65,6 +70,7 @@ def generateDiscreteData(lstDatos):
 # OBTENER DATOS PARA LA TABLA DE FRECUENCIAS
 def generateQualitativeData(lstDatos):
     lstDatos = formatData(lstDatos)
+    lstDatos = sorted(lstDatos)
     clase, frecAbs = [], []
     for element in lstDatos:
         if(element not in clase):
@@ -72,8 +78,9 @@ def generateQualitativeData(lstDatos):
             frecAbs.append(1)
         else:
             frecAbs[clase.index(element)] += 1
-            
-    clase, frecAbs = mayorMenorFrec(clase, frecAbs)
+
+    # Orden mayor a menor 
+    #clase, frecAbs = mayorMenorFrec(clase, frecAbs)
     
     frecAbsAc, frecRel, frecRelAc = [], [], []
     frecAbsT = sum(frecAbs)
